@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IDS | Simulation Results</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/results.css" />
+    <link rel="shortcut icon" href="../static/icon.jpg" type="image/x-icon" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="../static/icon.jpg"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top rounded-circle"
+          />
+          IDS
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Attack Simulation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('pda') }}"
+                >Preliminary Data Analysis</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('features') }}"
+                >Features Description</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h2 id="main-heading">Simulation Results by Machine Learning Models</h2>
+      <div class="card mb-3 container-sm">
+        <div class="card-body">
+          <h5 class="card-title with-border-bottom">
+            Decision Tree Prediction
+          </h5>
+          <p class="card-text">
+            <strong>Attack Type:</strong> <span>{{ dt_prediction }}</span>
+          </p>
+          <p class="card-text">
+            <strong>Accuracy (Probability):</strong>
+            <span>{{dt_accuracy}}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-3 container-sm">
+        <div class="card-body">
+          <h5 class="card-title with-border-bottom">
+            Random Forest Prediction
+          </h5>
+          <p class="card-text">
+            <strong>Attack Type:</strong> <span>{{ rf_prediction }}</span>
+          </p>
+          <p class="card-text">
+            <strong>Accuracy (Probability):</strong>
+            <span>{{rf_accuracy}}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-3 container-sm">
+        <div class="card-body">
+          <h5 class="card-title with-border-bottom">
+            K-Nearest Neighbors Prediction
+          </h5>
+          <p class="card-text">
+            <strong>Attack Type:</strong> <span>{{ knn_prediction }}</span>
+          </p>
+          <p class="card-text">
+            <strong>Accuracy (Probability):</strong>
+            <span>{{knn_accuracy}}</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="card mb-3 container-sm">
+        <div class="card-body">
+          <h5 class="card-title with-border-bottom">
+            Logistic Regression Prediction
+          </h5>
+          <p class="card-text">
+            <strong>Attack Type:</strong> <span>{{ lr_prediction }}</span>
+          </p>
+          <p class="card-text">
+            <strong>Accuracy (Probability):</strong>
+            <span>{{lr_accuracy}}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer text-center">
+      <h6 class="footer__title">~ ABHIRAM D V S ~</h6>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

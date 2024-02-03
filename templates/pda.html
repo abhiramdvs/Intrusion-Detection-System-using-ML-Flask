@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IDS | Data Analysis</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/pda.css" />
+    <link rel="shortcut icon" href="../static/icon.jpg" type="image/x-icon" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="../static/icon.jpg"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top rounded-circle"
+          />
+          IDS
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Attack Simulation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ url_for('pda') }}"
+                >Preliminary Data Analysis</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('features') }}"
+                >Features Description</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h2 id="main-heading">Preliminary Data Analysis</h2>
+
+    <div class="card text-bg-dark mb-3 container-sm">
+      <div class="card-body">
+        <h5 class="card-title with-border-bottom">Data Description</h5>
+        <p class="card-text">
+          The dataset contains the records of the internet traffic seen by a
+          simple intrusion detection network and are the ghosts of traffic
+          encountered by a real IDS and just the traces of its existence
+          remains. The dataset contains 43 features per record, with 41 of the
+          features referring to the traffic input itself and the last two are
+          labels (whether it is normal or an attack) and Score (the severity of
+          the traffic input itself)
+        </p>
+      </div>
+    </div>
+
+    <div class="attacks">
+      <div class="card border-black mb-3 container-sm">
+        <img
+          src="../static/pda-assets/attacks.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center fw-bold mb-2">
+            Traffic Data Distribution Chart
+          </h5>
+          <p class="card-text">
+            This dataset contains 4 different classes of attacks. Denial of
+            Service (DOS), Probe, User to Root (U2R), Remote to Local (R2L). A
+            brief description about these attacks is given below:
+          </p>
+          <p>
+            A <strong>Denial of Service (DoS)</strong> attack aims to overwhelm
+            a system, network, or service by flooding it with a massive volume
+            of requests, causing it to become unavailable to users.
+          </p>
+          <p>
+            A <strong>Probe</strong> attack involves an attacker actively
+            scanning a network or system to identify vulnerabilities, open
+            ports, or weaknesses without launching a direct assault.
+          </p>
+          <p>
+            In a <strong>Remote to Local (R2L)</strong> attack, an unauthorized
+            user attempts to gain access to a system by exploiting
+            vulnerabilities in remote services or applications. The attacker
+            aims to escalate privileges or gain unauthorized access to the
+            targeted system, typically through vulnerabilities in network
+            services.
+          </p>
+          <p>
+            A <strong>User to Root (U2R)</strong> attack occurs when an intruder
+            with limited access attempts to elevate their privileges to gain
+            full control over a system. The attacker tries to exploit
+            vulnerabilities or weaknesses to escalate their privileges from a
+            regular user to a superuser (root/administrator), allowing them to
+            control the entire system.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="protocols">
+      <div class="card border-black mb-3 container-sm">
+        <img
+          src="../static/pda-assets/protocol.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center fw-bold mb-2">
+            Protocol Data Distribution Chart
+          </h5>
+          <p class="card-text">
+            In this dataset, there are 3 protocols that reflects the diverse set
+            of communication methods and applications interacting across the
+            network. A brief description about these protocols is given below:
+          </p>
+          <p>
+            <strong>TCP</strong> is a connection-oriented protocol used for
+            reliable and ordered communication between devices on a network. It
+            ensures that data is delivered accurately and in the correct order
+            by establishing a connection before data transfer and implementing
+            error-checking mechanisms.
+          </p>
+          <p>
+            <strong>UDP</strong> is a connectionless protocol that provides a
+            faster but less reliable form of communication compared to TCP. It
+            does not establish a connection before transmitting data and does
+            not guarantee the order or delivery of packets. UDP is often used
+            for real-time applications where low latency is crucial.
+          </p>
+          <p>
+            <strong>ICMP</strong> is a network layer protocol used for error
+            reporting, diagnostics, and managing network communications. It is
+            commonly associated with utilities like Ping and Traceroute,
+            providing information about network conditions and troubleshooting
+            connectivity issues.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mlalgo">
+      <div class="card border-black mb-3 container-sm">
+        <img
+          src="../static/pda-assets/model_score.png"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center fw-bold mb-2">
+            Model Accuracy Chart with F1 - Score
+          </h5>
+          <p class="card-text">
+            F1 score is a machine learning evaluation metric that measures a
+            model's accuracy. It combines the precision and recall scores of a
+            model. The accuracy metric computes how many times a model made a
+            correct prediction across the entire dataset. 3 Models are used in
+            this prediction and a brief description about these models is given
+            below:
+          </p>
+          <p>
+            <strong>Decision Trees</strong> are supervised learning algorithms
+            that make decisions based on a series of hierarchical, tree-like
+            structures. Each node in the tree represents a decision based on a
+            feature, and the branches represent the possible outcomes or
+            decisions. Decision Trees are versatile, easy to understand, and
+            applicable to both classification and regression tasks.
+          </p>
+          <p>
+            <strong>k-Nearest Neighbors</strong> is a simple and intuitive
+            classification algorithm. It classifies a data point based on the
+            majority class of its k nearest neighbors in the feature space. The
+            choice of the parameter k determines the number of neighbors
+            considered for classification.
+          </p>
+          <p>
+            <strong>Logistic Regression</strong> is a classification algorithm
+            used for binary and multi-class classification problems. It models
+            the probability that a given instance belongs to a particular class.
+            Logistic Regression applies the logistic function to a linear
+            combination of input features, mapping the result to a probability
+            between 0 and 1.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer text-center">
+      <h6 class="footer__title">~ ABHIRAM D V S ~</h6>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

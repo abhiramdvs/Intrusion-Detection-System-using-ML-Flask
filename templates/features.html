@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IDS | Features Description</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/features.css">
+    <link rel="shortcut icon" href="../static/icon.jpg" type="image/x-icon">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="../static/icon.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top rounded-circle">
+            IDS
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Attack Simulation</a>
+                  </li>
+                <a class="nav-link" href="{{ url_for('pda') }}">Preliminary Data Analysis</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('features') }}">Features Description</a>
+              </li>
+            </ul>   
+          </div>
+        </div>
+      </nav>
+      <h2 id="main-heading">Features Description</h2>
+      <div class="container mt-3">
+        <h4 id="side-heading">KDD IDS Sample Dataset</h4>
+        <div class="table-container">
+          {{ table_html|safe }}
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <h3>Deatiled Explanation of the Features</h3>
+  
+      <div class="container">
+        <div class="row">
+            <!-- Loop through each item in the JSON array -->
+            {% for field in fields %}
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            {{ field.name }}
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title"><strong>Description: </strong>{{ field.description }}</h6>
+                            <p class="card-text"><strong>Type: </strong>{{ field.type }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+  </div>
+
+      <footer class="footer text-center">
+        <h6 class="footer__title">~ ABHIRAM D V S ~</h6>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>

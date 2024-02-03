@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins&display=swap");
+
+body::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #212529;
+}
+
+.navbar {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  margin-right: 8px;
+}
+
+#main-heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.7rem;
+  letter-spacing: 0.08rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.with-border-bottom {
+  border-bottom: 1.5px solid #000000;
+  padding-bottom: 5px;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.card h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.card span {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.footer__title {
+  padding: 1rem;
+  background-color: #212529;
+  color: #ffffff;
+  margin-bottom: -1rem;
+}
